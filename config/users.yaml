@@ -5,14 +5,11 @@ users:
     email: 'pagerduty2@stephengrier.com'
     base_role: limited_user
     tag_name: org_unit_1
-    teams:
-      - Engineering
-      - DevOps
+    sms_number: '07123456789'
+    phone_number: '07123456789'
 
   'Barry Bethel':
     email: 'pagerduty3@stephengrier.com'
     base_role: limited_user
     tag_name: org_unit_2
-    teams:
-      - DevOps
 

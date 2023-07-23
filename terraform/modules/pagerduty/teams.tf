@@ -1,12 +1,12 @@
 resource "pagerduty_team" "parent" {
-  for_each = local.parent_teams
+  for_each = var.parent_teams
 
   name  = each.key
   description = each.value.description
 }
 
 resource "pagerduty_team" "subteam" {
-  for_each = local.sub_teams
+  for_each = var.sub_teams
 
   name  = each.key
   description = each.value.description

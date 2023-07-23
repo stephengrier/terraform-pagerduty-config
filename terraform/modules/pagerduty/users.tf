@@ -1,9 +1,11 @@
 resource "pagerduty_user" "user" {
-  for_each = local.users
+  for_each = var.users
 
   name  = each.key
   email = each.value.email
   role  = each.value.base_role
+  job_title = each.value.job_title
+  time_zone = each.value.time_zone
 }
 
 locals {
@@ -16,7 +18,7 @@ locals {
 resource "pagerduty_tag_assignment" "user_tag" {
   for_each = pagerduty_user.user
 
-  tag_id      = local.tags[local.users[each.value.name].tag_name].id
+  tag_id      = local.tags[var.users[each.value.name].tag_name].id
   entity_type = "users"
   entity_id   = each.value.id
 }
