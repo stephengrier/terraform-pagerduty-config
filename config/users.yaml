@@ -3,13 +3,13 @@
 users:
   'Bob Smith':
     email: 'pagerduty2@stephengrier.com'
-    base_role: limited_user
+    base_role: restricted_access
     tag_name: org_unit_1
     sms_number: '07123456789'
     phone_number: '07123456789'
 
   'Barry Bethel':
     email: 'pagerduty3@stephengrier.com'
-    base_role: limited_user
+    base_role: observer
     tag_name: org_unit_2
 

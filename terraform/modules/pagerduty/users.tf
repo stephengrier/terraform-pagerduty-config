@@ -1,24 +1,11 @@
-resource "pagerduty_user" "user" {
+module "user" {
+  source   = "./modules/user"
   for_each = var.users
 
-  name  = each.key
-  email = each.value.email
-  role  = each.value.base_role
+  name      = each.key
+  email     = each.value.email
+  base_role = each.value.base_role
   job_title = each.value.job_title
   time_zone = each.value.time_zone
-}
-
-locals {
-  tags = {
-    org_unit_1 = pagerduty_tag.org_unit_1
-    org_unit_2 = pagerduty_tag.org_unit_2
-  }
-}
-
-resource "pagerduty_tag_assignment" "user_tag" {
-  for_each = pagerduty_user.user
-
-  tag_id      = local.tags[var.users[each.value.name].tag_name].id
-  entity_type = "users"
-  entity_id   = each.value.id
+  tag_id    = pagerduty_tag.tag[each.value.tag_name].id
 }

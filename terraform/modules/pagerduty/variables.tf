@@ -4,7 +4,7 @@ variable "users" {
     email        = string,
     phone_number = optional(string),
     sms_number   = optional(string),
-    base_role    = optional(string, "limited_user"),
+    base_role    = optional(string, "restricted_access"),
     job_title    = optional(string),
     time_zone    = optional(string),
     tag_name     = optional(string),
@@ -27,5 +27,12 @@ variable "sub_teams" {
     parent      = string,
     managers    = optional(list(string)),
     responders  = optional(list(string))
+  }))
+}
+
+variable "tags" {
+  description = "A map of tags to create that can be attached to other resources"
+  type        = map(object({
+    label     = string
   }))
 }

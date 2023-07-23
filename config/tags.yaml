@@ -1,0 +1,7 @@
+---
+
+tags:
+  'org_unit_1':
+    label: 'BillingEntity:OrgUnit1'
+  'org_unit_2':
+    label: 'BillingEntity:OrgUnit2'
