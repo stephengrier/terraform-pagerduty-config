@@ -1,0 +1,18 @@
+---
+
+users:
+  'Bob Smith':
+    email: 'pagerduty2@stephengrier.com'
+    base_role: limited_user
+    tag_name: org_unit_1
+    teams:
+      - Engineering
+      - DevOps
+
+  'Barry Bethel':
+    email: 'pagerduty3@stephengrier.com'
+    base_role: limited_user
+    tag_name: org_unit_2
+    teams:
+      - DevOps
+
