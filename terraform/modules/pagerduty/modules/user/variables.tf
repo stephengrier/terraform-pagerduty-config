@@ -32,6 +32,11 @@ variable "sms_number" {
   default = null
 }
 
+variable "country_code" {
+  type    = string
+  default = null
+}
+
 variable "tag_id" {
   type    = string
   default = null

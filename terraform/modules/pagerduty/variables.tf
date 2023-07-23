@@ -4,6 +4,7 @@ variable "users" {
     email        = string,
     phone_number = optional(string),
     sms_number   = optional(string),
+    country_code = optional(string),
     base_role    = optional(string, "restricted_access"),
     job_title    = optional(string),
     time_zone    = optional(string),

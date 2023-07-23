@@ -8,4 +8,8 @@ module "user" {
   job_title = each.value.job_title
   time_zone = each.value.time_zone
   tag_id    = pagerduty_tag.tag[each.value.tag_name].id
+
+  phone_number = each.value.phone_number
+  sms_number   = each.value.sms_number
+  country_code = each.value.country_code
 }
