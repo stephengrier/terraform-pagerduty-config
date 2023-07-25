@@ -7,7 +7,7 @@ resource "pagerduty_user" "user" {
 }
 
 resource "pagerduty_tag_assignment" "user_tag" {
-  count    = var.tag_id != null ? 1 : 0
+  count = var.add_tag
 
   tag_id      = var.tag_id
   entity_type = "users"

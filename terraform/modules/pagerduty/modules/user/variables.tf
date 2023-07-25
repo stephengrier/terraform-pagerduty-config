@@ -41,3 +41,9 @@ variable "tag_id" {
   type    = string
   default = null
 }
+
+variable "add_tag" {
+  type        = number
+  description = "Should a tag be assigned to the user"
+  default     = 0
+}
