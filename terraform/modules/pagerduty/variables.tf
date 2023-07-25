@@ -59,3 +59,18 @@ variable "schedules" {
     }))
   }))
 }
+
+variable "escalation_policies" {
+  type = map(object({
+    teams = optional(list(string)),
+    description = optional(string),
+    num_loops = optional(number),
+    rules = list(object({
+      escalation_delay_in_minutes = number,
+      targets = list(object({
+        type = optional(string),
+        target_name = string
+      }))
+    }))
+  }))
+}

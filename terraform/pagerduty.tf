@@ -6,4 +6,6 @@ module "pagerduty" {
   sub_teams    = local.sub_teams
   tags         = local.tags
   schedules    = local.schedules
+
+  escalation_policies = local.escalation_policies
 }
