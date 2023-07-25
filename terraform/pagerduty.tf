@@ -5,4 +5,5 @@ module "pagerduty" {
   parent_teams = local.parent_teams
   sub_teams    = local.sub_teams
   tags         = local.tags
+  schedules    = local.schedules
 }

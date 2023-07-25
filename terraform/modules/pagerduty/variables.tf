@@ -37,3 +37,25 @@ variable "tags" {
     label     = string
   }))
 }
+
+variable "schedules" {
+  type = map(object({
+    time_zone = string,
+    description = optional(string),
+    overflow = optional(bool),
+    teams       = optional(list(string)),
+    layers      = list(object({
+      name = string,
+      start = string,
+      rotation_virtual_start = string,
+      rotation_turn_length_seconds = string,
+      users = list(string),
+      restrictions = optional(list(object({
+        type = string,
+        start_time_of_day = string,
+        duration_seconds = string,
+        start_day_of_week = number
+      })))
+    }))
+  }))
+}

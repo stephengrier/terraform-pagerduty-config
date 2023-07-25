@@ -7,4 +7,5 @@ locals {
   parent_teams = yamldecode(file("${path.module}/../config/${local.teams_file}"))["parent_teams"]
   sub_teams = yamldecode(file("${path.module}/../config/${local.teams_file}"))["sub_teams"]
   tags         = yamldecode(file("${path.module}/../config/${local.tags_file}"))["tags"]
+  schedules    = yamldecode(file("${path.module}/../config/schedules.yaml"))["schedules"]
 }
