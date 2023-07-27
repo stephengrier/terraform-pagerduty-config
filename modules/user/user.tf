@@ -1,7 +1,7 @@
 resource "pagerduty_user" "user" {
-  name  = var.name
-  email = var.email
-  role  = var.base_role
+  name      = var.name
+  email     = var.email
+  role      = var.base_role
   job_title = var.job_title
   time_zone = var.time_zone
 }
