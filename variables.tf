@@ -8,7 +8,7 @@ variable "users" {
     base_role    = optional(string, "restricted_access"),
     job_title    = optional(string),
     time_zone    = optional(string),
-    tag_name     = optional(string),
+    tag_names    = optional(list(string)),
   }))
 }
 

@@ -37,13 +37,13 @@ variable "country_code" {
   default = null
 }
 
-variable "tag_id" {
-  type    = string
+variable "tag_ids" {
+  type    = list(string)
   default = null
 }
 
-variable "add_tag" {
+variable "tag_count" {
   type        = number
-  description = "Should a tag be assigned to the user"
+  description = "The number of tags to be assigned to the user"
   default     = 0
 }
