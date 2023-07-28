@@ -8,16 +8,16 @@ escalation_policies:
       - 'DevOps'
     num_loops: 5
     rules:
-    - escalation_delay_in_minutes: 10
-      targets:
-      - type: 'schedule_reference'
-        target_name: 'DevOps team in-hours schedule'
-      - type: 'user_reference'
-        target_name: 'Bob Smith'
-    - escalation_delay_in_minutes: 5
-      targets:
-      - type: 'user_reference'
-        target_name: 'Bob Smith'
+      - escalation_delay_in_minutes: 10
+        targets:
+          - type: 'schedule_reference'
+            target_name: 'DevOps team in-hours schedule'
+          - type: 'user_reference'
+            target_name: 'Bob Smith'
+      - escalation_delay_in_minutes: 5
+        targets:
+          - type: 'user_reference'
+            target_name: 'Bob Smith'
 
   'Engineering team escalation policy':
     description: 'Engineering team escalation policy'
@@ -25,11 +25,11 @@ escalation_policies:
       - 'Engineering'
     num_loops: 2
     rules:
-    - escalation_delay_in_minutes: 20
-      targets:
-      - type: 'schedule_reference'
-        target_name: 'DevOps team in-hours schedule'
-    - escalation_delay_in_minutes: 5
-      targets:
-      - type: 'user_reference'
-        target_name: 'Barry Bethel'
+      - escalation_delay_in_minutes: 20
+        targets:
+          - type: 'schedule_reference'
+            target_name: 'DevOps team in-hours schedule'
+      - escalation_delay_in_minutes: 5
+        targets:
+          - type: 'user_reference'
+            target_name: 'Barry Bethel'

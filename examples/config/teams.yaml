@@ -4,14 +4,14 @@ parent_teams:
   'Engineering':
     description: 'The Engineering Team'
     managers:
-    - 'Barry Bethel'
+      - 'Barry Bethel'
     responders:
-    - 'Bob Smith'
+      - 'Bob Smith'
 
 sub_teams:
   'DevOps':
     description: 'The DevOps Team'
     parent: 'Engineering'
     responders:
-    - 'Bob Smith'
-    - 'Barry Bethel'
+      - 'Bob Smith'
+      - 'Barry Bethel'
