@@ -16,8 +16,8 @@ variable "parent_teams" {
   description = "A map of top-level PagerDuty teams"
   type = map(object({
     description = optional(string),
-    managers    = optional(list(string)),
-    responders  = optional(list(string))
+    managers    = optional(list(string), []),
+    responders  = optional(list(string), [])
   }))
 }
 
@@ -26,8 +26,8 @@ variable "sub_teams" {
   type = map(object({
     parent      = string,
     description = optional(string),
-    managers    = optional(list(string)),
-    responders  = optional(list(string))
+    managers    = optional(list(string), []),
+    responders  = optional(list(string), [])
   }))
 }
 
@@ -43,7 +43,7 @@ variable "schedules" {
     time_zone   = string,
     description = optional(string),
     overflow    = optional(bool),
-    teams       = optional(list(string)),
+    teams       = optional(list(string), []),
     layers = list(object({
       name                         = string,
       start                        = string,
@@ -55,14 +55,14 @@ variable "schedules" {
         start_time_of_day = string,
         duration_seconds  = string,
         start_day_of_week = number
-      })))
+      })), [])
     }))
   }))
 }
 
 variable "escalation_policies" {
   type = map(object({
-    teams       = optional(list(string)),
+    teams       = optional(list(string), []),
     description = optional(string),
     num_loops   = optional(number),
     rules = list(object({
