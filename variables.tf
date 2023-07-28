@@ -15,7 +15,7 @@ variable "users" {
 variable "parent_teams" {
   description = "A map of top-level PagerDuty teams"
   type = map(object({
-    description = string,
+    description = optional(string),
     managers    = optional(list(string)),
     responders  = optional(list(string))
   }))
@@ -24,8 +24,8 @@ variable "parent_teams" {
 variable "sub_teams" {
   description = "A map of PagerDuty teams that are sub teams of a parent"
   type = map(object({
-    description = string,
     parent      = string,
+    description = optional(string),
     managers    = optional(list(string)),
     responders  = optional(list(string))
   }))
