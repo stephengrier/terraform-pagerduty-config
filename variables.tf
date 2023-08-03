@@ -54,7 +54,7 @@ variable "schedules" {
         type              = string,
         start_time_of_day = string,
         duration_seconds  = string,
-        start_day_of_week = number
+        start_day_of_week = optional(number)
       })), [])
     }))
   }))
